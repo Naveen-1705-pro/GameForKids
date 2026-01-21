@@ -1,0 +1,7 @@
+{
+  "name": "Copy of BuddyVerse",
+  "description": "A playful 3D-style learning world for kids aged 3-8. Learn numbers, alphabet, colors, and logic with funny animated friends!",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuddyVerse - Learn & Play</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Fredoka', 'sans-serif'],
+              display: ['Bubblegum Sans', 'cursive'],
+            },
+            colors: {
+              'buddy-blue': '#4FC3F7',
+              'buddy-green': '#AED581',
+              'buddy-yellow': '#FFF176',
+              'buddy-orange': '#FFB74D',
+              'buddy-pink': '#F06292',
+              'buddy-purple': '#BA68C8',
+            },
+            boxShadow: {
+              'b-4': '0 4px 0',
+              'b-6': '0 6px 0',
+              'b-8': '0 8px 0',
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+              'wiggle': 'wiggle 1s ease-in-out infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'pop': 'pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+            },
+            keyframes: {
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.5)', opacity: 0 },
+                '100%': { transform: 'scale(1)', opacity: 1 },
+              },
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #E1F5FE;
+        background-image: radial-gradient(#B3E5FC 2px, transparent 2px);
+        background-size: 30px 30px;
+        overflow-x: hidden;
+      }
+      .perspective-container {
+        perspective: 1000px;
+      }
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.3s ease;
+      }
+      .card-3d:hover {
+        transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+      }
+      .text-outline {
+        text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+      }
+      /* Custom balloon string */
+      .balloon-string::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        width: 2px;
+        height: 20px;
+        background: rgba(0,0,0,0.2);
+        transform: translateX(-50%);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
